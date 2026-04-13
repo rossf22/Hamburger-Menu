@@ -56,13 +56,13 @@ nav a:hover {
 /* Hide the checkbox and hamburger icon on desktop */
 nav input[type="checkbox"],
 nav label {
-  
+  display: none;
 }
 
 /* ------------------------------
    MOBILE HAMBURGER MENU
 --------------------------------- */
-@media (max-width: ) {
+@media (max-width: 768px) {
 
   header nav {
     margin-left: auto;
@@ -71,32 +71,42 @@ nav label {
 
   /* Show the hamburger icon */
   header nav label {
-      /* Make the label visible on smaller screens */
-      /* Change the cursor so it looks clickable */
-      /* Set the icon color */
-      /* Increase the icon size */
+    display: block;  /* Make the label visible on smaller screens */
+    cursor: pointer;  /* Change the cursor so it looks clickable */
+    color: white;  /* Set the icon color */
+    font-size: 280%;  /* Increase the icon size */
+    line-height: 1;
+    margin-left: auto;
   }
 
   /* Hide menu by default */
   nav ul {
-      /* Start with the menu collapsed */
-      /* Hide content that extends past collapsed height */
-      /* Stack menu items vertically */
+    max-height: 0;  /* Start with the menu collapsed */
+    overflow: hidden;  /* Hide content that extends past collapsed height */
+    flex-direction: column;  /* Stack menu items vertically */
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 8px 20px rgba(16,4,67,0.3);
+    margin-top: .75rem;
+    min-width: 220px;
+    transition: max-height 0.5s ease-in-out;
   }
 
   /* Open menu when checkbox is checked */
   /* Increase max-height if your menu has more links */
   #menu:checked + ul {
-    
+    max-height: 300px;
   }
 
   /* Mobile menu items */
   nav ul li {
     text-align: center;
+    padding: 0;
+    border-bottom: 1px solid #d9e2ec;
   }
 
   nav ul li:last-child {
-    
+    border-bottom: none;
   }
 
   nav ul li a {
@@ -105,11 +115,11 @@ nav label {
     padding: 0.8rem 2rem; /* Adds more clickable space inside link */
     border-radius: 0; /* Removes rounded corners so mobile dropdown has straight edges */
     font-size: 125%; /* Adjusts size of mobile menu links */
-    color: ; /* Text color for mobile menu links */
+    color: #000000; /* Text color for mobile menu links */
   }
 
   nav ul li a:hover {
-    background-color: #f0f4f8; /* Background color when hovering over item */
-    color: #2f6f91; /* Text color when hovering */
+    background-color: #ffffff; /* Background color when hovering over item */
+    color: #000000; /* Text color when hovering */
   }
 }
